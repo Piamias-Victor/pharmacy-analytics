@@ -2,11 +2,27 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "./base.json",
   "compilerOptions": {
-    "plugins": [{ "name": "next" }],
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
+    "target": "ES2017",
+    "lib": ["DOM", "DOM.Iterable", "ES6"],
     "allowJs": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
     "jsx": "preserve",
-    "noEmit": true
-  }
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

@@ -1,0 +1,49 @@
+{
+  "name": "@pharmacy/analytics-api",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --port 3001",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf .next dist",
+    "db:generate": "drizzle-kit generate:pg --config=drizzle.config.ts",
+    "db:push": "drizzle-kit push:pg --config=drizzle.config.ts",
+    "db:studio": "drizzle-kit studio --config=drizzle.config.ts",
+    "db:test": "tsx scripts/test-connection.ts",
+    "db:test-drizzle": "tsx scripts/test-drizzle.ts"
+  },
+  "dependencies": {
+    "@pharmacy/database": "workspace:*",
+    "@pharmacy/shared": "workspace:*",
+    "@pharmacy/ui": "workspace:*",
+    "@tanstack/react-query": "^5.81.5",
+    "@upstash/redis": "^1.35.1",
+    "date-fns": "^2.30.0",
+    "dotenv": "^17.0.1",
+    "drizzle-orm": "^0.29.5",
+    "next": "^15.3.5",
+    "pg": "^8.16.3",
+    "pino": "^8.21.0",
+    "pino-pretty": "^10.3.1",
+    "postgres": "^3.4.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zod": "^3.25.75"
+  },
+  "devDependencies": {
+    "@pharmacy/eslint-config": "workspace:*",
+    "@pharmacy/typescript-config": "workspace:*",
+    "@types/node": "^20.19.4",
+    "@types/pg": "^8.15.4",
+    "@types/react": "^18.3.23",
+    "@types/react-dom": "^18.3.7",
+    "drizzle-kit": "^0.20.0",
+    "eslint": "^8.50.0",
+    "eslint-config-next": "^15.0.0",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  }
+}
